@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>netstandard2.0</TargetFramework>
+	  
+	  <PackageId>Reqnroll.Markdown</PackageId>
+	  <Version>0.0.1</Version>
+	  <Authors>Wrzucher</Authors>
+	  <Company>DjayC</Company>
+	  <Description>Copies *.md files and converts them into *.feature files.</Description>
+	  <PackageTags>markdown;feature;bdd;msbuild;reqnroll</PackageTags>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <RepositoryUrl>https://yourprojectsite.com</RepositoryUrl>
+	  <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+	  <PackageType>Build</PackageType>
+	  <IncludeBuildOutput>true</IncludeBuildOutput>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <None Include="..\build\Reqnroll.Markdown.targets" Pack="true" PackagePath="build\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Framework" Version="17.13.9" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.13.9" />
+  </ItemGroup>
+
+</Project>

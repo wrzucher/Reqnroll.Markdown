@@ -1,0 +1,19 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<UsingTask
+		TaskName="Reqnroll.Markdown.MarkdownToFeatureTask"
+		AssemblyFile="$(MSBuildThisFileDirectory)..\lib\netstandard2.0\Reqnroll.Markdown.dll" />
+
+	<Target Name="GenerateFeatureFilesFromMarkdown"
+			BeforeTargets="BeforeCompile"
+			Condition=" '$(ReqnrollMarkdownEnabled)' == 'true' ">
+
+		<Message Text="Running Reqnroll.Markdown to generate .feature files..." Importance="High" />
+
+		<MarkdownToFeatureTask
+			SourceDirectory="$(ProjectDir)"
+			OutputDirectory="$(ReqnrollMarkdownOutputDirectory)" />
+
+	</Target>
+
+</Project>
